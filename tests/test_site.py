@@ -1,6 +1,7 @@
 """Dependency-free checks for the exact files published to GitHub Pages."""
 
 import collections
+import hashlib
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -87,6 +88,8 @@ class ResumeSiteTests(unittest.TestCase):
             data = (SITE / link["href"]).read_bytes()
             self.assertTrue(data.startswith(b"%PDF-"))
             self.assertGreater(len(data), 10_000)
+            self.assertEqual(hashlib.sha256(data).hexdigest(),
+                             "b476167a1c35be2bb6e3ed940949684315d7138e2acd3e00397ce96fb1038993")
 
     def test_cv_content_is_present(self):
         content = " ".join(self.doc.text)
@@ -111,18 +114,32 @@ class ResumeSiteTests(unittest.TestCase):
         self.assertEqual(len(self.doc.matching("summary")), 1)
         self.assertEqual([script.get("src") for script in self.doc.matching("script")], ["theme.js"])
 
-    def test_grafana_work_leads_the_page(self):
+    def test_observability_leads_with_products_as_supporting_examples(self):
         hero = self.source.split('class="hero wrap"', 1)[1].split('class="system-illustration"', 1)[0]
-        self.assertIn("Grafana-based monitoring", hero)
+        self.assertIn("Observability", hero)
+        self.assertIn("reliable systems", hero)
+        self.assertNotIn("Grafana", hero)
         cards = re.findall(r'<article class="work-card[^\"]*">(.*?)</article>', self.source, re.S)
         self.assertEqual(len(cards), 4)
-        self.assertIn("Grafana SDLC", cards[0])
-        self.assertIn("Grafana ecosystem", cards[1])
+        self.assertIn("Observability &amp; reliability", cards[0])
+        self.assertIn("Platform engineering", cards[1])
+        self.assertIn("Grafana resources", cards[1])
+        for card in cards:
+            self.assertNotIn("Grafana", re.search(r'<h3>(.*?)</h3>', card, re.S)[1])
         for context in ("The context.", "My contribution."):
             self.assertIn(context, cards[0])
             self.assertIn(context, cards[1])
-        for product in ("Mimir for metrics", "Loki for logs", "Tempo for distributed traces"):
-            self.assertIn(product, cards[1])
+        for product in ("Mimir for metrics", "Loki for logs", "Tempo for traces"):
+            self.assertIn(product, self.source)
+
+    def test_engineering_skills_describe_transferable_capabilities(self):
+        skills = self.source.split('aria-labelledby="skills-title"', 1)[1].split('</section>', 1)[0]
+        for expected in ("Software engineering", "Systems &amp; performance", "Ownership &amp; collaboration",
+                         "regression testing", "release governance", "production issues", "parallel processing"):
+            with self.subTest(skill=expected):
+                self.assertIn(expected, skills)
+        self.assertIn("Observability and Automation Engineer", self.source)
+        self.assertNotIn("Applied AI Engineer", self.source)
 
     def test_theme_toggle_is_progressively_enhanced(self):
         toggle = next(b for b in self.doc.matching("button") if b.get("id") == "theme-toggle")

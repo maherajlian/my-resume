@@ -41,14 +41,17 @@ always uses the light palette regardless of the selected screen theme.
 - `site/index.html`: copy, experience, projects, skills and contact links.
 - `site/styles.css`: colours, responsive layouts and print styles.
 - `site/theme.js`: system preference, accessible toggle and saved theme choice.
-- `site/assets/Maheraj-Lian-CV.pdf`: the original downloadable CV.
+- `site/assets/Maheraj-Lian-CV.pdf`: the latest owner-supplied downloadable CV.
 - `site/assets/social.png`: social sharing image.
 - `tests/test_site.py`: content and publishing checks.
 - `tests/theme.test.cjs`: dependency-free theme behavior tests.
 
 The HTML summarises the CV rather than adding new biographical claims. The
 inconsistent "25–20 million metric samples per minute" figure in the source CV
-is intentionally not repeated on the page. The original PDF remains unchanged.
+is intentionally not repeated on the page. The latest supplied PDF is published
+byte-for-byte; its SHA-256 is checked by the download regression test. The page
+leads with observability and transferable engineering capabilities, using named
+products as concrete examples within the work rather than as the skills taxonomy.
 The public page uses email as the contact method; the downloadable CV includes
 the contact information in the supplied document.
 
