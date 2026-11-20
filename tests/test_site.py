@@ -3,6 +3,7 @@
 import collections
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 import unittest
 from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
@@ -109,6 +110,20 @@ class ResumeSiteTests(unittest.TestCase):
                 self.assertIn(section["aria-labelledby"], self.ids)
         self.assertEqual(len(self.doc.matching("summary")), 1)
         self.assertNotIn("<script", self.source.lower())
+
+    def test_brand_label_includes_visible_name_and_monogram(self):
+        brand = next(a for a in self.doc.matching("a") if a.get("class") == "brand")
+        self.assertIn("ml. Maheraj Lian", brand["aria-label"])
+
+    def test_responsive_copy_keeps_spaces_when_breaks_are_hidden(self):
+        descriptions = re.findall(
+            r'<div class="section-heading">.*?</div><p>(.*?)</p></div>',
+            self.source,
+        )
+        self.assertGreaterEqual(len(descriptions), 3)
+        for description in descriptions:
+            with self.subTest(description=description):
+                self.assertIsNone(re.search(r'\S<br>\S', description))
 
     def test_styles_support_accessibility_mobile_and_print(self):
         css = (SITE / "styles.css").read_text(encoding="utf-8")
