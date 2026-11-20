@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maherajlian.github.io/my-resume/sitemap.xml
