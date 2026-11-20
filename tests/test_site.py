@@ -109,7 +109,27 @@ class ResumeSiteTests(unittest.TestCase):
             if "aria-labelledby" in section:
                 self.assertIn(section["aria-labelledby"], self.ids)
         self.assertEqual(len(self.doc.matching("summary")), 1)
-        self.assertNotIn("<script", self.source.lower())
+        self.assertEqual([script.get("src") for script in self.doc.matching("script")], ["theme.js"])
+
+    def test_grafana_work_leads_the_page(self):
+        hero = self.source.split('class="hero wrap"', 1)[1].split('class="system-illustration"', 1)[0]
+        self.assertIn("Grafana-based monitoring", hero)
+        cards = re.findall(r'<article class="work-card[^\"]*">(.*?)</article>', self.source, re.S)
+        self.assertEqual(len(cards), 4)
+        self.assertIn("Grafana SDLC", cards[0])
+        self.assertIn("Grafana ecosystem", cards[1])
+        for context in ("The context.", "My contribution."):
+            self.assertIn(context, cards[0])
+            self.assertIn(context, cards[1])
+        for product in ("Mimir for metrics", "Loki for logs", "Tempo for distributed traces"):
+            self.assertIn(product, cards[1])
+
+    def test_theme_toggle_is_progressively_enhanced(self):
+        toggle = next(b for b in self.doc.matching("button") if b.get("id") == "theme-toggle")
+        self.assertEqual(toggle["type"], "button")
+        self.assertEqual(toggle["aria-pressed"], "false")
+        self.assertIn("hidden", toggle)
+        self.assertLess(self.source.index('<script src="theme.js">'), self.source.index('href="styles.css"'))
 
     def test_brand_label_includes_visible_name_and_monogram(self):
         brand = next(a for a in self.doc.matching("a") if a.get("class") == "brand")
@@ -144,6 +164,7 @@ class ResumeSiteTests(unittest.TestCase):
         css = (SITE / "styles.css").read_text(encoding="utf-8")
         print_styles = css.split("@media print", 1)[1]
         self.assertIn(".site-footer{display:none}", print_styles)
+        self.assertIn(":root,:root[data-theme]{color-scheme:light", print_styles)
 
 
 if __name__ == "__main__":
