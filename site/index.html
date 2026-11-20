@@ -5,92 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f7f2">
   <title>Maheraj Lian — Systems &amp; Platform Engineer</title>
-  <meta name="description" content="Maheraj Lian is a London-based engineer building observability platforms, distributed systems and applied AI at UBS.">
+  <meta name="description" content="Maheraj Lian engineers enterprise observability at UBS: Grafana, Mimir, Loki, Tempo and governed delivery pipelines used by hundreds of teams.">
   <link rel="canonical" href="https://maherajlian.github.io/my-resume/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Maheraj Lian — Systems &amp; Platform Engineer">
-  <meta property="og:description" content="Making complex systems work. Observability, distributed systems, platform engineering and applied AI.">
+  <meta property="og:description" content="Observability. Built to scale. Grafana-based monitoring and governed delivery across a global enterprise.">
   <meta property="og:url" content="https://maherajlian.github.io/my-resume/">
   <meta property="og:image" content="https://maherajlian.github.io/my-resume/assets/social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Maheraj Lian. Systems engineering, observability and applied AI. London, UK.">
+  <meta property="og:image:alt" content="Maheraj Lian. Observability. Built to scale. Grafana, Mimir, Loki and Tempo. London, UK.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="theme.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
     <a class="brand" href="#" aria-label="ml. Maheraj Lian, back to top"><span class="monogram" aria-hidden="true">ml<span>.</span></span><span>Maheraj Lian</span></a>
-    <nav aria-label="Main navigation">
+    <div class="header-actions"><nav aria-label="Main navigation">
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#about">About</a>
       <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
-    </nav>
+    </nav><button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" hidden>
+      <svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg>
+      <svg class="theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+      <span class="theme-label">Dark mode</span>
+    </button></div>
   </header>
 
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Systems engineer · London, UK</p>
-        <h1 id="hero-title">Making complex<br>systems <em>work.</em></h1>
-        <p class="intro">I build the platforms that help people see clearly, move faster and keep critical systems running.</p>
-        <p class="hero-detail">Observability, distributed systems and applied AI.<br>Currently engineering at <strong>UBS.</strong></p>
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Observability &amp; platform engineering · London</p>
+        <h1 id="hero-title">Observability.<br>Built to <em>scale.</em></h1>
+        <p class="intro">I engineer Grafana-based monitoring and governed delivery pipelines, helping teams understand production systems and safely ship observability changes.</p>
+        <p class="hero-detail">Grafana · Mimir · Loki · Tempo · Prometheus<br>Systems and platform engineering at <strong>UBS.</strong></p>
         <div class="hero-actions">
           <a class="button button-dark" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
           <a class="text-link" href="assets/Maheraj-Lian-CV.pdf" download>Download CV <span class="file-label">PDF</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
       <div class="system-illustration" aria-hidden="true">
-        <div class="diagram-top"><span>AN ENGINEER’S PERSPECTIVE</span><span>01 / 03</span></div>
+        <div class="diagram-top"><span>GRAFANA ECOSYSTEM</span><span>METRICS / LOGS / TRACES</span></div>
         <svg viewBox="0 0 460 330" fill="none">
-          <defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#d7d9d0"/></pattern></defs>
+          <defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="var(--diagram-dot)"/></pattern></defs>
           <path fill="url(#dots)" d="M0 0h460v330H0z"/>
-          <circle cx="230" cy="167" r="124" stroke="#d6d9ce" stroke-dasharray="4 6"/>
-          <path d="M100 100h80v67h50m130-67h-80v67h-50m0 0v99" stroke="#9aab93" stroke-width="1.5"/>
+          <circle cx="230" cy="167" r="124" stroke="var(--diagram-line)" stroke-dasharray="4 6"/>
+          <path d="M100 100h80v67h50m130-67h-80v67h-50m0 0v99" stroke="var(--diagram-track)" stroke-width="1.5"/>
           <circle cx="180" cy="134" r="4" fill="#d95639"/>
           <circle cx="280" cy="130" r="4" fill="#d95639"/>
           <circle cx="230" cy="235" r="4" fill="#d95639"/>
-          <rect x="26" y="67" width="140" height="65" rx="4" fill="#f7f7f2" stroke="#c8cec0"/>
-          <path d="M44 101h6l4-12 6 22 6-14h12" stroke="#607657" stroke-width="1.8"/>
-          <text x="44" y="120" fill="#4d5948" font-size="10" font-family="monospace">OBSERVABILITY</text>
-          <rect x="294" y="67" width="140" height="65" rx="4" fill="#f7f7f2" stroke="#c8cec0"/>
-          <path d="M313 87h18v6h-18zm0 10h18v6h-18z" stroke="#607657" stroke-width="1.5"/>
-          <text x="312" y="120" fill="#4d5948" font-size="10" font-family="monospace">PLATFORMS</text>
-          <rect x="160" y="260" width="140" height="54" rx="4" fill="#f7f7f2" stroke="#c8cec0"/>
-          <path d="m181 272 3 7 7 3-7 3-3 7-3-7-7-3 7-3z" stroke="#607657" stroke-width="1.5"/>
-          <text x="199" y="286" fill="#4d5948" font-size="10" font-family="monospace">APPLIED AI</text>
+          <rect x="26" y="67" width="140" height="65" rx="4" fill="var(--paper)" stroke="var(--diagram-line)"/>
+          <path d="M44 101h6l4-12 6 22 6-14h12" stroke="var(--green)" stroke-width="1.8"/>
+          <text x="44" y="120" fill="var(--diagram-text)" font-size="10" font-family="monospace">METRICS &amp; LOGS</text>
+          <rect x="294" y="67" width="140" height="65" rx="4" fill="var(--paper)" stroke="var(--diagram-line)"/>
+          <path d="M313 87h18v6h-18zm0 10h18v6h-18z" stroke="var(--green)" stroke-width="1.5"/>
+          <text x="312" y="120" fill="var(--diagram-text)" font-size="10" font-family="monospace">DASHBOARDS</text>
+          <rect x="160" y="260" width="140" height="54" rx="4" fill="var(--paper)" stroke="var(--diagram-line)"/>
+          <path d="m181 272 3 7 7 3-7 3-3 7-3-7-7-3 7-3z" stroke="var(--green)" stroke-width="1.5"/>
+          <text x="199" y="286" fill="var(--diagram-text)" font-size="9" font-family="monospace">TRACES &amp; ALERTS</text>
           <rect x="191" y="129" width="78" height="78" rx="15" fill="#d95639"/>
           <path d="m208 167 13 13 29-29" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="116" cy="224" r="5" fill="#e1e6da" stroke="#9aab93"/>
-          <circle cx="356" cy="217" r="5" fill="#e1e6da" stroke="#9aab93"/>
+          <circle cx="116" cy="224" r="5" fill="var(--diagram-node)" stroke="var(--diagram-track)"/>
+          <circle cx="356" cy="217" r="5" fill="var(--diagram-node)" stroke="var(--diagram-track)"/>
         </svg>
-        <div class="diagram-bottom"><span class="status-dot"></span> COMPLEXITY IN. CLARITY OUT.</div>
+        <div class="diagram-bottom"><span class="status-dot"></span> VISIBILITY. DELIVERY. RELIABILITY.</div>
       </div>
     </section>
 
     <section class="impact wrap" aria-label="Selected engineering impact at UBS">
-      <div><p class="metric">7M<span>+</span></p><p>duplicate alerts suppressed daily</p></div>
-      <div><p class="metric">98.3<span>%</span></p><p>reduction in enrichment time</p></div>
       <div><p class="metric">6<span>+</span></p><p>production regions supported</p></div>
-      <div><p class="metric">30<span>%</span></p><p>less incident triage time in pilot</p></div>
+      <div><p class="metric">1,000s</p><p>Grafana resources governed</p></div>
+      <div><p class="metric">100s</p><p>engineering teams enabled</p></div>
+      <div><p class="metric">7M<span>+</span></p><p>duplicate alerts suppressed daily</p></div>
     </section>
 
     <section class="section wrap" id="work" aria-labelledby="work-title">
-      <div class="section-heading"><div><p class="eyebrow">01 / Selected work</p><h2 id="work-title">Built for the real world.</h2></div><p>Enterprise scale. Measurable impact.<br> Selected engineering work at UBS.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">01 / Selected work</p><h2 id="work-title">Observability, from platform to production.</h2></div><p>Leading with my recent Grafana work.<br> Built for the scale and controls of UBS.</p></div>
       <div class="work-grid">
-        <article class="work-card"><div class="card-top"><span class="card-number">01</span><span class="category">Distributed systems</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h5v5h6V7h5M12 12v8M2 4h4v5H2zm16 0h4v5h-4zM10 18h4v4h-4z"/></svg></div><h3>Less noise.<br>More signal.</h3><p>Designed a Redis-backed event suppression platform eliminating over 7 million duplicate alerts every day, reducing monitoring noise by 70–90% and keeping ingestion stable during event storms.</p><p class="card-result">7M+ <span>duplicate alerts suppressed / day</span></p><ul class="tags" aria-label="Technologies"><li>Redis</li><li>Cribl Stream</li><li>BigPanda</li></ul></article>
-        <article class="work-card"><div class="card-top"><span class="card-number">02</span><span class="category">Platform engineering</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v5H4zm0 9h16v5H4zM7 7.5h1m-1 9h1m3-9h6m-6 9h6"/></svg></div><h3>A safer path<br>to production.</h3><p>Independently architected the first approved bank-wide Grafana SDLC: governed CI/CD for thousands of observability resources, used by hundreds of engineering teams across 6+ production regions.</p><p class="card-result">Hundreds <span>of engineering teams enabled</span></p><ul class="tags" aria-label="Technologies"><li>Python</li><li>GitLab CI/CD</li><li>Grafana</li></ul></article>
-        <article class="work-card"><div class="card-top"><span class="card-number">03</span><span class="category">Performance &amp; reliability</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 18a9 9 0 1 1 18 0M12 15l5-7M7 11l-2-2m7-1V5m6 6 2-2"/><circle cx="12" cy="16" r="2"/></svg></div><h3>Five hours.<br>Five minutes.</h3><p>Re-architected a real-time enrichment pipeline processing 5 million+ records. Parallel workers, batch processing and Redis pipelining cut runtime while Azure Key Vault protected sensitive metadata.</p><p class="card-result">98.3% <span>reduction in processing time</span></p><ul class="tags" aria-label="Technologies"><li>Python</li><li>Azure Redis</li><li>Multithreading</li></ul></article>
+        <article class="work-card work-card-featured">
+          <div class="card-top"><span class="card-number">01</span><span class="category">Grafana SDLC</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v5H4zm0 9h16v5H4zM7 7.5h1m-1 9h1m3-9h6m-6 9h6"/></svg></div>
+          <h3>A governed path<br>for Grafana changes.</h3>
+          <p><strong>The context.</strong> In a regulated bank, dashboards and alert rules need controlled production changes too—not just application code.</p>
+          <p><strong>My contribution.</strong> I independently architected and built the first approved bank-wide GitLab SDLC for Grafana configuration. Python pipelines validate and promote resources, combining mandatory peer review with SRE-controlled approval gates, including silence and mute-timing changes.</p>
+          <p><strong>The impact.</strong> Thousands of merge requests and daily promotions across hundreds of engineering teams, from development environments into 6+ geographical production regions.</p>
+          <p class="card-result">Thousands <span>of Grafana resources under governed delivery</span></p><ul class="tags" aria-label="Technologies"><li>Grafana</li><li>Python</li><li>GitLab CI/CD</li></ul>
+        </article>
+        <article class="work-card work-card-featured">
+          <div class="card-top"><span class="card-number">02</span><span class="category">Grafana ecosystem</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2 13h5l3-8 4 15 3-7h5"/></svg></div>
+          <h3>Metrics. Logs. Traces.<br>At enterprise scale.</h3>
+          <p><strong>The context.</strong> Application teams need reliable baseline monitoring before they can add their own dashboards, alerts and operational insights.</p>
+          <p><strong>My contribution.</strong> I engineered monitoring capabilities across Grafana Mimir for metrics, Loki for logs and Tempo for distributed traces, alongside Prometheus and Alertmanager. The bank-wide platform supports tens of thousands of applications and internal infrastructure across multiple regions.</p>
+          <p><strong>Team enablement.</strong> I also delivered technical training and knowledge-sharing sessions to hundreds of engineers across global business functions and technology streams.</p>
+          <p class="card-result">Global <span>baseline monitoring, with application-specific insight</span></p><ul class="tags" aria-label="Technologies"><li>Mimir</li><li>Loki</li><li>Tempo</li><li>Prometheus</li></ul>
+        </article>
+        <article class="work-card"><div class="card-top"><span class="card-number">03</span><span class="category">Event processing &amp; reliability</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 18a9 9 0 1 1 18 0M12 15l5-7M7 11l-2-2m7-1V5m6 6 2-2"/><circle cx="12" cy="16" r="2"/></svg></div><h3>Quieter pipelines.<br>Faster enrichment.</h3><p>Beyond the Grafana stack, I designed Redis-backed event suppression eliminating 7 million+ duplicate alerts daily and reducing noise by 70–90%. In a separate enrichment pipeline processing 5 million+ records, parallel workers, batching and Redis pipelining cut runtime from five hours to five minutes—a 98.3% reduction.</p><p class="card-result">7M+ <span>duplicate alerts suppressed / day</span></p><ul class="tags" aria-label="Technologies"><li>Redis</li><li>Cribl Stream</li><li>BigPanda</li></ul></article>
         <article class="work-card"><div class="card-top"><span class="card-number">04</span><span class="category">Applied AI</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div><h3>Better context.<br>Faster response.</h3><p>Took an enterprise AI incident assistant from solo proof of concept to delivery with a five-engineer team. Connected incident context and similar-incident discovery with response guardrails and prompt regression tests.</p><p class="card-result">30% <span>less triage time during the pilot</span></p><ul class="tags" aria-label="Technologies"><li>Azure OpenAI</li><li>Python / Flask</li><li>RAG</li></ul></article>
       </div>
     </section>
 
     <section class="experience-section" id="experience" aria-labelledby="experience-title"><div class="section wrap">
       <div class="section-heading"><div><p class="eyebrow">02 / Experience</p><h2 id="experience-title">From ideas to infrastructure.</h2></div><p>4+ years building and supporting<br> mission-critical enterprise systems.</p></div>
-      <article class="experience-row"><div class="job-meta"><p class="company">UBS<span class="company-dot">.</span></p><p>Sep 2022 — Present</p><p>London, UK</p></div><div class="job-body"><h3>Applied AI Engineer</h3><p class="job-team">Automation Services</p><p>Systems and platform engineering across enterprise observability, distributed event processing, production monitoring and incident automation in a global, regulated financial institution.</p><ul class="job-highlights"><li>Built monitoring across Grafana Mimir, Loki, Tempo, Prometheus and Alertmanager, supporting metrics, logs and traces across global infrastructure.</li><li>Led the observability team’s Netcool migration to BigPanda and Cribl Stream across approximately 12 major integrations, replacing 40+ custom Perl enrichment scripts and onboarding 10+ engineering teams.</li><li>Act as an engineering escalation point for SRE teams; built end-to-end alert latency monitoring with Python, Prometheus and Grafana.</li></ul><details><summary>More about my work at UBS <span aria-hidden="true">+</span></summary><div class="details-content"><p>Built governed Python automation for Grafana dashboards, alert rules and controlled silence changes, with peer reviews, automated validation and SRE approval gates.</p><p>Developed incident summarisation and retrieval using Azure OpenAI, embeddings, Azure AI Search and daily Databricks indexing pipelines, processing hundreds of thousands of records at peak.</p><p>Implemented secure deployment patterns with Azure Key Vault, private endpoints, Terraform and CI/CD. Delivered technical training and knowledge-sharing to hundreds of engineers across global teams.</p></div></details></div></article>
+      <article class="experience-row"><div class="job-meta"><p class="company">UBS<span class="company-dot">.</span></p><p>Sep 2022 — Present</p><p>London, UK</p></div><div class="job-body"><h3>Applied AI Engineer</h3><p class="job-team">Automation Services</p><p>My recent work centres on enterprise observability and platform engineering: giving application teams visibility into production and a governed way to manage their Grafana resources in a global, regulated financial institution.</p><ul class="job-highlights"><li>Independently architected the bank-wide Grafana SDLC: Python validation and promotion, mandatory peer review and SRE approval gates for thousands of resources across 6+ production regions.</li><li>Engineered monitoring with Grafana Mimir, Loki, Tempo, Prometheus and Alertmanager, supporting metrics, logs and distributed traces across global infrastructure.</li><li>Enabled application teams through baseline monitoring and technical training for hundreds of engineers. Act as an engineering escalation point for SRE teams, with end-to-end alert latency monitoring built using Python, Prometheus and Grafana.</li></ul><details><summary>More engineering work at UBS <span aria-hidden="true">+</span></summary><div class="details-content"><p>Led the observability team’s Netcool migration to BigPanda and Cribl Stream across approximately 12 major integrations, replacing 40+ custom Perl enrichment scripts and onboarding 10+ engineering teams.</p><p>Developed incident summarisation and retrieval using Azure OpenAI, embeddings, Azure AI Search and daily Databricks indexing pipelines, processing hundreds of thousands of records at peak.</p><p>Implemented secure deployment patterns with Azure Key Vault, private endpoints, Terraform and CI/CD.</p></div></details></div></article>
       <article class="experience-row"><div class="job-meta"><p class="company company-small">Zustech</p><p>Dec 2021 — Jun 2022</p><p>Remote</p></div><div class="job-body"><h3>Software Engineering Intern</h3><p>Developed REST APIs with ASP.NET Core for an enterprise learning platform, supporting authentication and transactional workflows. Optimised SQL Server schemas, indexing and stored procedures to reduce critical endpoint response times by 40%, and deployed services to AWS.</p></div></article>
     </div></section>
 

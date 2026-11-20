@@ -19,20 +19,32 @@ Open http://localhost:8000. All published files live in `site/`.
 
 ```sh
 python -m unittest discover -s tests -v
+node --test tests/theme.test.cjs
 ```
 
 Checks cover local links, project-relative asset paths, PDF downloads, CV
 content, metadata, sitemap and accessibility basics. The site also supports
 keyboard navigation, native expandable experience, reduced motion and print.
-Browser-based visual and accessibility checks complement these static checks.
+Theme tests use the built-in Node.js test runner (Node 24 in CI), with no npm
+dependencies. Browser-based visual and accessibility checks complement them.
+
+## Appearance
+
+The header’s **Dark mode** toggle follows the system preference on first visit,
+then remembers an explicit choice in this browser. It also syncs changes across
+tabs and continues working when local storage is unavailable. Without JavaScript,
+the resume remains readable in light mode and the toggle stays hidden. Printing
+always uses the light palette regardless of the selected screen theme.
 
 ## Edit
 
 - `site/index.html`: copy, experience, projects, skills and contact links.
 - `site/styles.css`: colours, responsive layouts and print styles.
+- `site/theme.js`: system preference, accessible toggle and saved theme choice.
 - `site/assets/Maheraj-Lian-CV.pdf`: the original downloadable CV.
 - `site/assets/social.png`: social sharing image.
 - `tests/test_site.py`: content and publishing checks.
+- `tests/theme.test.cjs`: dependency-free theme behavior tests.
 
 The HTML summarises the CV rather than adding new biographical claims. The
 inconsistent "25–20 million metric samples per minute" figure in the source CV
