@@ -140,6 +140,11 @@ class ResumeSiteTests(unittest.TestCase):
         self.assertIn(PUBLIC_URL + "sitemap.xml", (SITE / "robots.txt").read_text())
         self.assertTrue((SITE / ".nojekyll").is_file())
 
+    def test_print_hides_website_footer(self):
+        css = (SITE / "styles.css").read_text(encoding="utf-8")
+        print_styles = css.split("@media print", 1)[1]
+        self.assertIn(".site-footer{display:none}", print_styles)
+
 
 if __name__ == "__main__":
     unittest.main()
